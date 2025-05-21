@@ -1,3 +1,5 @@
+import { getAssetPath } from '../utils/pathUtils';
+
 const projects = [
   {
     id: 1,
@@ -8,15 +10,15 @@ const projects = [
     githubLink: 'https://github.com/Yamenelrayes/fitpose',
     demoLink: 'https://drive.google.com/file/d/1aUKQ6W225w9OQENkljUHuK-hsDAvn9vo/view?usp=sharing',
     images: [
-      '/images/projects/fitpose-1.png',
-      '/images/projects/fitpose-2.png',
-      '/images/projects/fitpose-3.png',
-      '/images/projects/fitpose-4.png',
-      '/images/projects/fitpose-5.png',
-      '/images/projects/fitpose-6.png',
-      '/images/projects/fitpose-7.png'
+      getAssetPath('/images/projects/fitpose-1.png'),
+      getAssetPath('/images/projects/fitpose-2.png'),
+      getAssetPath('/images/projects/fitpose-3.png'),
+      getAssetPath('/images/projects/fitpose-4.png'),
+      getAssetPath('/images/projects/fitpose-5.png'),
+      getAssetPath('/images/projects/fitpose-6.png'),
+      getAssetPath('/images/projects/fitpose-7.png')
     ],
-    image: '/images/projects/fitpose-1.png'
+    image: getAssetPath('/images/projects/fitpose-1.png')
   },
   {
     id: 2,
@@ -27,12 +29,12 @@ const projects = [
     githubLink: 'https://github.com/Yamenelrayes/SpendWise',
     demoLink: '',
     images: [
-      '/images/projects/spendwise-1.jpg',
-      '/images/projects/spendwise-2.jpg',
-      '/images/projects/spendwise-3.jpg',
-      '/images/projects/spendwise-4.jpg'
+      getAssetPath('/images/projects/spendwise-1.jpg'),
+      getAssetPath('/images/projects/spendwise-2.jpg'),
+      getAssetPath('/images/projects/spendwise-3.jpg'),
+      getAssetPath('/images/projects/spendwise-4.jpg')
     ],
-    image: '/images/projects/spendwise-1.jpg'
+    image: getAssetPath('/images/projects/spendwise-1.jpg')
   },
   {
     id: 3,
@@ -43,12 +45,12 @@ const projects = [
     githubLink: 'https://github.com/COMP6018-25/battleships-coursework-1-2025-Yamenelrayes',
     demoLink: '',
     images: [
-      '/images/projects/battleships-1.png',
-      '/images/projects/battleships-2.png',
-      '/images/projects/battleships-3.png',
-      '/images/projects/battleships-4.png'
+      getAssetPath('/images/projects/battleships-1.png'),
+      getAssetPath('/images/projects/battleships-2.png'),
+      getAssetPath('/images/projects/battleships-3.png'),
+      getAssetPath('/images/projects/battleships-4.png')
     ],
-    image: '/images/projects/battleships-1.png'
+    image: getAssetPath('/images/projects/battleships-1.png')
   },
   {
     id: 4,
@@ -59,9 +61,9 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      '/images/projects/bluesnakegame-1.png'
+      getAssetPath('/images/projects/bluesnakegame-1.png')
     ],
-    image: '/images/projects/bluesnakegame-1.png'
+    image: getAssetPath('/images/projects/bluesnakegame-1.png')
   },
   {
     id: 5,
@@ -72,11 +74,11 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      '/images/projects/sahl-1.png',
-      '/images/projects/sahl-2.png',
-      '/images/projects/sahl-3.png'
+      getAssetPath('/images/projects/sahl-1.png'),
+      getAssetPath('/images/projects/sahl-2.png'),
+      getAssetPath('/images/projects/sahl-3.png')
     ],
-    image: '/images/projects/sahl-1.png'
+    image: getAssetPath('/images/projects/sahl-1.png')
   },
   {
     id: 6,
@@ -87,9 +89,9 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      '/images/projects/chillndrink-1.png'
+      getAssetPath('/images/projects/chillndrink-1.png')
     ],
-    image: '/images/projects/chillndrink-1.png'
+    image: getAssetPath('/images/projects/chillndrink-1.png')
   }
 ];
 

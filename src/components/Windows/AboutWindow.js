@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import aboutMe from '../../data/aboutMe';
-import { FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 
 const Container = styled.div`
   padding: 25px;

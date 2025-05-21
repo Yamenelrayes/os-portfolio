@@ -29,18 +29,23 @@ const ProjectCard = styled.div`
   }
 `;
 
-const ProjectImage = styled.div`
+const ProjectImageContainer = styled.div`
   width: 100%;
   height: 150px;
   background-color: #333;
   border-radius: 5px;
   margin-bottom: 15px;
-  background-image: url(${props => props.src});
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const Placeholder = styled.div`
@@ -164,16 +169,17 @@ const DetailTitle = styled.h2`
   margin: 0;
 `;
 
-const DetailImage = styled.div`
+const DetailImageContainer = styled.div`
   width: 100%;
   height: 300px;
   background-color: #333;
   border-radius: 8px;
   margin-bottom: 20px;
-  background-image: url(${props => props.src});
-  background-size: cover;
-  background-position: center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const GalleryNavButton = styled.button`
@@ -224,6 +230,10 @@ const ProjectsWindow = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
+  // Debug paths
+  console.log("Projects:", projects);
+  console.log("First project image path:", projects[0].image);
+  
   const openProjectDetail = (project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
@@ -260,14 +270,16 @@ const ProjectsWindow = () => {
       <ProjectsGrid>
         {projects.map(project => (
           <ProjectCard key={project.id} onClick={() => openProjectDetail(project)}>
-            <ProjectImage src={project.image || (project.images && project.images[0])}>
-              {!project.image && !project.images && (
+            <ProjectImageContainer>
+              {project.image ? (
+                <StyledImage src={project.image} alt={project.name} />
+              ) : (
                 <Placeholder>
                   <FaFolder size={40} />
                   <span>No image</span>
                 </Placeholder>
               )}
-            </ProjectImage>
+            </ProjectImageContainer>
             <ProjectName>
               {project.name}
               <Year>{project.year}</Year>
@@ -294,14 +306,18 @@ const ProjectsWindow = () => {
               <Year>{selectedProject.year}</Year>
             </DetailHeader>
             
-            <DetailImage 
-              src={
-                selectedProject.images && selectedProject.images.length > 0
-                  ? selectedProject.images[currentImageIndex]
-                  : selectedProject.image
-              }
-            >
-              {!selectedProject.image && !selectedProject.images && (
+            <DetailImageContainer>
+              {selectedProject.images && selectedProject.images.length > 0 ? (
+                <StyledImage 
+                  src={selectedProject.images[currentImageIndex]}
+                  alt={`${selectedProject.name} screenshot ${currentImageIndex + 1}`} 
+                />
+              ) : selectedProject.image ? (
+                <StyledImage 
+                  src={selectedProject.image}
+                  alt={selectedProject.name} 
+                />
+              ) : (
                 <Placeholder>
                   <FaFolder size={60} />
                   <span>No image</span>
@@ -318,7 +334,7 @@ const ProjectsWindow = () => {
                   </GalleryNavButton>
                 </>
               )}
-            </DetailImage>
+            </DetailImageContainer>
             
             {selectedProject.images && selectedProject.images.length > 1 && (
               <ImageIndicators>

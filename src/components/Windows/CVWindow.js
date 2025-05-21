@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaDownload, FaFileAlt } from 'react-icons/fa';
+import { getAssetPath } from '../../utils/pathUtils';
 
 const Container = styled.div`
   padding: 0;
@@ -79,8 +80,7 @@ const PDFFrame = styled.iframe`
 `;
 
 const CVWindow = () => {
-  // Use process.env.PUBLIC_URL to handle GitHub Pages base path
-  const cvPath = `${process.env.PUBLIC_URL}/yamen-cv.pdf`;
+  const cvPath = getAssetPath('/yamen-cv.pdf');
 
   return (
     <Container>

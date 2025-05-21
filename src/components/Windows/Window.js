@@ -20,15 +20,6 @@ const WindowContainer = styled(motion.div)`
   transition: all 0.2s ease;
   transform-origin: center center;
   border: ${({ isActive }) => isActive ? '1px solid rgba(100, 100, 100, 0.3)' : '1px solid rgba(60, 60, 60, 0.2)'};
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  will-change: transform, opacity;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 `;
 
 const TitleBar = styled.div`
@@ -97,9 +88,6 @@ const ContentArea = styled(motion.div)`
   position: relative;
   height: calc(100% - 38px);
   background-color: rgba(38, 38, 38, 0.7);
-  will-change: opacity;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   
   /* Custom scrollbar */
   &::-webkit-scrollbar {
@@ -152,18 +140,17 @@ const WindowResizeHandles = styled.div`
   }
 `;
 
-// Animation variants - simplified for Safari compatibility
+// Animation variants
 const windowVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
   visible: { 
     opacity: 1, 
-    scale: 1,
+    scale: 1, 
+    y: 0,
     transition: {
-      type: "tween", // Using tween instead of spring for Safari
-      duration: 0.3,
-      ease: "easeOut",
-      delay: 0.1, // Increased delay for Safari
-      when: "beforeChildren" // Ensure parent animation completes first
+      type: "spring",
+      stiffness: 260,
+      damping: 20
     }
   },
   exit: { 
@@ -171,7 +158,7 @@ const windowVariants = {
     scale: 0.9,
     transition: {
       ease: "easeInOut",
-      duration: 0.2
+      duration: 0.3
     }
   }
 };
@@ -195,15 +182,28 @@ const Window = ({
   const [preMaximizeState, setPreMaximizeState] = useState({ position, size });
   
   const handleDragStop = (e, d) => {
-    onMove({ x: d.x, y: d.y });
+    e.stopPropagation();
+    // Ensure the position values are integers to avoid subpixel rendering issues
+    const x = Math.round(d.x);
+    const y = Math.round(d.y);
+    onMove({ x, y });
   };
   
   const handleResizeStop = (e, direction, ref, delta, position) => {
-    onResize({
-      width: parseInt(ref.style.width),
-      height: parseInt(ref.style.height)
-    });
-    onMove(position);
+    e.stopPropagation();
+    
+    // Parse as integers and ensure we have valid width/height
+    const width = Math.max(300, parseInt(ref.style.width) || 300);
+    const height = Math.max(200, parseInt(ref.style.height) || 200);
+    
+    // Round position values
+    const roundedPosition = {
+      x: Math.round(position.x),
+      y: Math.round(position.y)
+    };
+    
+    onResize({ width, height });
+    onMove(roundedPosition);
   };
 
   const toggleMaximize = () => {
@@ -238,23 +238,16 @@ const Window = ({
   
   return (
     <Rnd
-      style={{ 
-        zIndex: isMaximized ? 100 : zIndex,
-        transform: 'translateZ(0)',
-        WebkitTransform: 'translateZ(0)', // Add Safari-specific transform
-      }}
-      default={{
-        x: position.x,
-        y: position.y,
-        width: size.width,
-        height: size.height
-      }}
+      style={{ zIndex: isMaximized ? 100 : zIndex }}
       position={{ x: position.x, y: position.y }}
       size={{ width: size.width, height: size.height }}
       minWidth={300}
       minHeight={200}
       bounds="parent"
-      onDragStart={onFocus}
+      onDragStart={(e, d) => {
+        e.stopPropagation();
+        onFocus();
+      }}
       onDragStop={handleDragStop}
       onResizeStart={onFocus}
       onResizeStop={handleResizeStop}
@@ -288,7 +281,7 @@ const Window = ({
         <ContentArea
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.2, ease: "easeOut" }}
+          transition={{ delay: 0.1 }}
         >
           {children}
           <WindowResizeHandles isActive={isActive && !isMaximized} />

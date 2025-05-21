@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -212,7 +212,7 @@ const BootScreen = () => {
     setMatrixColumns(columns);
   }, []);
   
-  const bootMessages = [
+  const bootMessages = useMemo(() => [
     'Yamen OS v1.0 - Advanced Portfolio System',
     'Initializing system kernel...',
     'Loading hardware drivers...',
@@ -224,7 +224,7 @@ const BootScreen = () => {
     'Running security protocols...',
     'Preparing desktop environment...',
     'System ready'
-  ];
+  ], []);
 
   useEffect(() => {
     const timeouts = [];
@@ -240,7 +240,7 @@ const BootScreen = () => {
     });
     
     return () => timeouts.forEach(timeout => clearTimeout(timeout));
-  }, []);
+  }, [bootMessages]);
   
   const glitchVariants = {
     hidden: { opacity: 0, y: -50 },
