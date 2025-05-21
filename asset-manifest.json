@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yamen-os-portfolio/static/css/main.d69a2a56.css",
+    "main.js": "/yamen-os-portfolio/static/js/main.18cfad19.js",
+    "index.html": "/yamen-os-portfolio/index.html",
+    "main.d69a2a56.css.map": "/yamen-os-portfolio/static/css/main.d69a2a56.css.map",
+    "main.18cfad19.js.map": "/yamen-os-portfolio/static/js/main.18cfad19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d69a2a56.css",
+    "static/js/main.18cfad19.js"
+  ]
+}
