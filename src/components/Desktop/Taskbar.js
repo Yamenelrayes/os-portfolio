@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaWindows, FaWifi, FaVolumeUp, FaBatteryThreeQuarters, FaRegBell } from 'react-icons/fa';
 
 const TaskbarContainer = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -16,6 +16,11 @@ const TaskbarContainer = styled(motion.div)`
   padding: 0 15px;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  
+  @media (max-width: 768px) {
+    height: 42px;
+    padding: 0 8px;
+  }
 `;
 
 const StartButton = styled(motion.div)`
@@ -31,6 +36,11 @@ const StartButton = styled(motion.div)`
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    width: 36px;
+    height: 36px;
   }
 `;
 
@@ -64,6 +74,7 @@ const TaskbarItem = styled(motion.div)`
   position: relative;
   overflow: hidden;
   opacity: ${({ minimized }) => minimized ? 0.7 : 1};
+  white-space: nowrap;
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.25);
@@ -87,6 +98,19 @@ const TaskbarItem = styled(motion.div)`
     transform: scaleX(1);
     background-color: ${({ active }) => active ? '#4caf50' : 'rgba(255, 255, 255, 0.5)'};
   }
+  
+  @media (max-width: 768px) {
+    height: 30px;
+    padding: 0 8px;
+    margin-right: 4px;
+    font-size: 11px;
+  }
+  
+  @media (max-width: 480px) {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const TimeWidget = styled.div`
@@ -99,6 +123,15 @@ const TimeWidget = styled.div`
   padding: 0 15px;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
+  
+  @media (max-width: 768px) {
+    font-size: 10px;
+    padding: 0 5px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 3px;
+  }
 `;
 
 const StatusIcons = styled.div`
@@ -107,6 +140,16 @@ const StatusIcons = styled.div`
   gap: 15px;
   color: white;
   padding: 0 15px;
+  
+  @media (max-width: 768px) {
+    gap: 10px;
+    padding: 0 5px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 8px;
+    padding: 0 3px;
+  }
 `;
 
 const StatusIcon = styled(motion.div)`

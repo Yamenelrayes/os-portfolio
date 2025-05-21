@@ -2,7 +2,7 @@
   "name": "yamen-os-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yamenelrayes.github.io/yamen-os-portfolio",
+  "homepage": "https://yamenelrayes.github.io/os-portfolio",
   "dependencies": {
     "@react-three/drei": "^10.0.8",
     "@react-three/fiber": "^9.1.2",

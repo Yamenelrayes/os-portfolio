@@ -149,6 +149,18 @@ const IconsContainer = styled(motion.div)`
   margin-top: 10px;
   z-index: 1;
   padding: 20px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, 80px);
+    grid-gap: 15px;
+    padding-right: 200px; /* Add space on the right for widgets */
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, 70px);
+    grid-gap: 10px;
+    padding-right: 180px; /* Slightly less space on smaller phones */
+  }
 `;
 
 const WidgetsContainer = styled(motion.div)`
@@ -159,6 +171,12 @@ const WidgetsContainer = styled(motion.div)`
   flex-direction: column;
   gap: 20px;
   z-index: 5;
+  
+  @media (max-width: 768px) {
+    width: 170px; /* Make widgets smaller on mobile */
+    right: 10px;
+    top: 10px;
+  }
 `;
 
 const Widget = styled(motion.div)`
@@ -170,6 +188,11 @@ const Widget = styled(motion.div)`
   color: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
               inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+              
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const WidgetTitle = styled.div`
@@ -179,12 +202,21 @@ const WidgetTitle = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
 `;
 
 const ClockWidget = styled.div`
   font-size: 24px;
   font-weight: 300;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const WeatherWidget = styled.div`
@@ -196,6 +228,10 @@ const WeatherWidget = styled.div`
 const Temperature = styled.div`
   font-size: 24px;
   font-weight: 300;
+  
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const WeatherIcon = styled.div`
