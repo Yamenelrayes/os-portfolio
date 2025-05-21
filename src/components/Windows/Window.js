@@ -20,6 +20,15 @@ const WindowContainer = styled(motion.div)`
   transition: all 0.2s ease;
   transform-origin: center center;
   border: ${({ isActive }) => isActive ? '1px solid rgba(100, 100, 100, 0.3)' : '1px solid rgba(60, 60, 60, 0.2)'};
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  will-change: transform, opacity;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 const TitleBar = styled.div`
@@ -88,6 +97,9 @@ const ContentArea = styled(motion.div)`
   position: relative;
   height: calc(100% - 38px);
   background-color: rgba(38, 38, 38, 0.7);
+  will-change: opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   
   /* Custom scrollbar */
   &::-webkit-scrollbar {
@@ -140,17 +152,18 @@ const WindowResizeHandles = styled.div`
   }
 `;
 
-// Animation variants
+// Animation variants - simplified for Safari compatibility
 const windowVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: { 
     opacity: 1, 
-    scale: 1, 
-    y: 0,
+    scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 20
+      type: "tween", // Using tween instead of spring for Safari
+      duration: 0.3,
+      ease: "easeOut",
+      delay: 0.1, // Increased delay for Safari
+      when: "beforeChildren" // Ensure parent animation completes first
     }
   },
   exit: { 
@@ -158,7 +171,7 @@ const windowVariants = {
     scale: 0.9,
     transition: {
       ease: "easeInOut",
-      duration: 0.3
+      duration: 0.2
     }
   }
 };
@@ -225,7 +238,11 @@ const Window = ({
   
   return (
     <Rnd
-      style={{ zIndex: isMaximized ? 100 : zIndex }}
+      style={{ 
+        zIndex: isMaximized ? 100 : zIndex,
+        transform: 'translateZ(0)',
+        WebkitTransform: 'translateZ(0)', // Add Safari-specific transform
+      }}
       default={{
         x: position.x,
         y: position.y,
@@ -271,7 +288,7 @@ const Window = ({
         <ContentArea
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.3, duration: 0.2, ease: "easeOut" }}
         >
           {children}
           <WindowResizeHandles isActive={isActive && !isMaximized} />

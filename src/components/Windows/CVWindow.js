@@ -79,7 +79,8 @@ const PDFFrame = styled.iframe`
 `;
 
 const CVWindow = () => {
-  const cvPath = '/yamen-cv.pdf';
+  // Use process.env.PUBLIC_URL to handle GitHub Pages base path
+  const cvPath = `${process.env.PUBLIC_URL}/yamen-cv.pdf`;
 
   return (
     <Container>
