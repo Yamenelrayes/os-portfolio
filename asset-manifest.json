@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/yamen-os-portfolio/static/css/main.d69a2a56.css",
-    "main.js": "/yamen-os-portfolio/static/js/main.18cfad19.js",
-    "index.html": "/yamen-os-portfolio/index.html",
-    "main.d69a2a56.css.map": "/yamen-os-portfolio/static/css/main.d69a2a56.css.map",
-    "main.18cfad19.js.map": "/yamen-os-portfolio/static/js/main.18cfad19.js.map"
+    "main.css": "/os-portfolio/static/css/main.d69a2a56.css",
+    "main.js": "/os-portfolio/static/js/main.28eae054.js",
+    "index.html": "/os-portfolio/index.html",
+    "main.d69a2a56.css.map": "/os-portfolio/static/css/main.d69a2a56.css.map",
+    "main.28eae054.js.map": "/os-portfolio/static/js/main.28eae054.js.map"
   },
   "entrypoints": [
     "static/css/main.d69a2a56.css",
-    "static/js/main.18cfad19.js"
+    "static/js/main.28eae054.js"
   ]
 }
