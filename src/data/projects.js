@@ -82,6 +82,45 @@ const projects = [
   },
   {
     id: 6,
+    name: 'Dawri Al-Abtal',
+    year: 2025,
+    description: 'Dawri Al-Abtal (Arabic for "Champions League") is a full-stack mobile app built for Reckitt Egypt that transforms sales rep performance tracking into a football league experience. Each supervisor manages a squad of sales reps as football players, and matches are played throughout the week — 2 matches per week, each spanning 3 days, where each day represents one goal. Goal outcomes are determined by comparing each team\'s daily achievement growth against their opponent\'s. The app features an interactive football field view showing player positions, live leaderboards, and a full league standings table. Built solo using Flutter and Firebase, the app is live on the App Store and Google Play and is actively used by Reckitt Egypt\'s sales teams.',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Figma'],
+    githubLink: '',
+    demoLink: '',
+    images: [
+      getAssetPath('/images/projects/dawri-1.png')
+    ],
+    image: getAssetPath('/images/projects/dawri-1.png')
+  },
+  {
+    id: 7,
+    name: 'Voxera AI',
+    year: 2025,
+    description: 'Voxera AI is a production-ready AI receptionist platform built with React. The product includes a public-facing website (VoxeraAI.com) and an AI Voice Receptionist that handles customer inquiries, automates responses, and supports lead capture — enabling businesses to run 24/7 customer-facing communication without human intervention.',
+    technologies: ['React', 'JavaScript', 'AI / Voice API', 'Node.js'],
+    githubLink: '',
+    demoLink: '',
+    images: [
+      getAssetPath('/images/projects/voxera-1.png')
+    ],
+    image: getAssetPath('/images/projects/voxera-1.png')
+  },
+  {
+    id: 8,
+    name: 'Body Log',
+    year: 2024,
+    description: 'Body Log is a Flutter mobile app that connects to smart InBody scales via Bluetooth to automatically retrieve detailed body composition data — including muscle mass, body fat percentage, and other key metrics. The app lets users log and track their InBody scan results over time, visualize progress through historical trend charts, and monitor how their body composition evolves across their fitness journey. Designed with gym-goers and fitness enthusiasts in mind, Body Log bridges the gap between professional body scanning equipment and personal progress tracking.',
+    technologies: ['Flutter', 'Dart', 'Bluetooth', 'Firebase'],
+    githubLink: '',
+    demoLink: '',
+    images: [
+      getAssetPath('/images/projects/bodylog-1.png')
+    ],
+    image: getAssetPath('/images/projects/bodylog-1.png')
+  },
+  {
+    id: 9,
     name: 'Chill n Drink',
     year: 2019,
     description: 'Chill n Drink is a custom-built Arduino-powered device that rapidly chills canned drinks using a combination of ice water immersion and motorized spinning. By placing a can on the platform and inserting a coin, the system activates and spins the drink in ice water, cooling it in under 1 minute—equivalent to 30 minutes in a freezer. Built from scratch, the device showcases skills in embedded systems, mechanical design, circuit integration, and user-triggered automation. It\'s designed to be user-friendly, cost-effective, and efficient for fast beverage cooling in casual or event settings.',

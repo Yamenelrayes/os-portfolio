@@ -1,14 +1,22 @@
 const achievements = [
   {
     id: 1,
-    title: 'FinTech Competition Winner',
-    organization: 'Central Bank of Egypt',
-    year: 2023,
-    description: 'Won third place for developing an innovative financial technology solution that addresses real-world banking challenges.',
-    icon: 'trophy'
+    title: 'IBM Product Manager Professional Certificate',
+    organization: 'IBM',
+    year: 2025,
+    description: 'Completed the IBM Product Manager Professional Certificate, covering product strategy, roadmapping, agile delivery, and stakeholder management.',
+    icon: 'certificate'
   },
   {
     id: 2,
+    title: 'FinTech Competition — 2nd Place',
+    organization: 'Central Bank of Egypt',
+    year: 2023,
+    description: 'Won second place in the first-ever nationwide FinTech competition hosted by the Central Bank of Egypt, for developing an innovative financial technology solution addressing real-world banking challenges.',
+    icon: 'trophy'
+  },
+  {
+    id: 3,
     title: 'ICPC ECPC Participation',
     organization: 'International Collegiate Programming Contest',
     year: 2022,
@@ -16,7 +24,7 @@ const achievements = [
     icon: 'code'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Certificate of Appreciation',
     organization: 'Coventry University',
     year: 2023,
@@ -24,7 +32,7 @@ const achievements = [
     icon: 'certificate'
   },
   {
-    id: 4,
+    id: 5,
     title: 'STEM Fair Winner',
     organization: 'STEM Competition',
     year: 2019,
@@ -32,7 +40,7 @@ const achievements = [
     icon: 'medal'
   },
   {
-    id: 5,
+    id: 6,
     title: 'JCIMUN Honorable Mention',
     organization: 'Junior Conference International Model United Nations',
     year: 2018,
@@ -40,7 +48,7 @@ const achievements = [
     icon: 'star'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Certificate of Appreciation',
     organization: 'TKH Student Union',
     year: 2023,

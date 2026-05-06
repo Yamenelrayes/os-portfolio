@@ -4,6 +4,7 @@ const skills = {
     { name: 'JavaScript', icon: 'SiJavascript', level: 55 },
     { name: 'Python', icon: 'SiPython', level: 65 },
     { name: 'C++', icon: 'SiCplusplus', level: 60 },
+    { name: 'SQL', icon: 'SiMysql', level: 65 },
     { name: 'R', icon: 'SiR', level: 60 }
   ],
   frameworks: [
@@ -18,12 +19,20 @@ const skills = {
     { name: 'Supabase', icon: 'SiSupabase', level: 85 },
     { name: 'Firebase', icon: 'SiFirebase', level: 75 },
     { name: 'Azure DevOps', icon: 'FaCode', level: 95 },
-    { name: 'Git', icon: 'SiGit', level: 70 }
+    { name: 'Git', icon: 'SiGit', level: 70 },
+    { name: 'Power Automate', icon: 'SiMicrosoftazure', level: 75 },
+    { name: 'Power BI', icon: 'SiPowerbi', level: 70 },
+    { name: 'n8n', icon: 'FaCode', level: 70 },
+    { name: 'REST APIs', icon: 'FaPlug', level: 80 },
+    { name: 'CI/CD', icon: 'FaInfinity', level: 70 }
   ],
   concepts: [
     { name: 'Product Management', icon: 'FaProjectDiagram', level: 80 },
     { name: 'Agile', icon: 'SiJirasoftware', level: 85 },
-    { name: 'UX Design', icon: 'FaPencilRuler', level: 80 }
+    { name: 'UX Design', icon: 'FaPencilRuler', level: 80 },
+    { name: 'Business Analysis', icon: 'FaChartBar', level: 85 },
+    { name: 'Stakeholder Management', icon: 'FaUsers', level: 80 },
+    { name: 'Requirements Gathering', icon: 'FaClipboardList', level: 80 }
   ],
   design: [
     { name: 'Figma', icon: 'SiFigma', level: 85 },

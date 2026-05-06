@@ -154,6 +154,14 @@ const MetaItem = styled.span`
   gap: 5px;
 `;
 
+const BulletList = styled.ul`
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+`;
+
 const AboutWindow = () => {
   // Get the first letter of first and last name for avatar
   const getInitials = (name) => {
@@ -187,6 +195,31 @@ const AboutWindow = () => {
           <SummaryText>{aboutMe.summary}</SummaryText>
         </div>
         
+        <div>
+          <SectionTitle>Experience</SectionTitle>
+          <EducationTimeline>
+            {aboutMe.experience.map((job, index) => (
+              <TimelineItem key={index}>
+                <Institution>{job.company}</Institution>
+                <Degree>{job.role}</Degree>
+                <EducationMeta>
+                  <MetaItem>
+                    <FaCalendarAlt /> {job.period}
+                  </MetaItem>
+                  <MetaItem>
+                    <FaMapMarkerAlt /> {job.location}
+                  </MetaItem>
+                </EducationMeta>
+                {job.bullets.length > 0 && (
+                  <BulletList>
+                    {job.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  </BulletList>
+                )}
+              </TimelineItem>
+            ))}
+          </EducationTimeline>
+        </div>
+
         <div>
           <SectionTitle>Education</SectionTitle>
           <EducationTimeline>
