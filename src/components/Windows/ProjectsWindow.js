@@ -48,6 +48,12 @@ const StyledImage = styled.img`
   object-fit: cover;
 `;
 
+const DetailImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
 const Placeholder = styled.div`
   display: flex;
   flex-direction: column;
@@ -171,7 +177,7 @@ const DetailTitle = styled.h2`
 
 const DetailImageContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 500px;
   background-color: #333;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -308,14 +314,14 @@ const ProjectsWindow = () => {
             
             <DetailImageContainer>
               {selectedProject.images && selectedProject.images.length > 0 ? (
-                <StyledImage 
+                <DetailImage
                   src={selectedProject.images[currentImageIndex]}
-                  alt={`${selectedProject.name} screenshot ${currentImageIndex + 1}`} 
+                  alt={`${selectedProject.name} screenshot ${currentImageIndex + 1}`}
                 />
               ) : selectedProject.image ? (
-                <StyledImage 
+                <DetailImage
                   src={selectedProject.image}
-                  alt={selectedProject.name} 
+                  alt={selectedProject.name}
                 />
               ) : (
                 <Placeholder>
