@@ -80,7 +80,7 @@ const PDFFrame = styled.iframe`
 `;
 
 const CVWindow = () => {
-  const cvPath = getAssetPath('/yamen-cv.pdf');
+  const cvPath = getAssetPath('/resume.pdf');
 
   return (
     <Container>
@@ -89,7 +89,7 @@ const CVWindow = () => {
           <FaFileAlt size={18} />
           <span>Yamen's CV</span>
         </HeaderTitle>
-        <DownloadButton href={cvPath} download="yamen-cv.pdf">
+        <DownloadButton href={cvPath} download="resume.pdf">
           <FaDownload /> Download CV
         </DownloadButton>
       </Header>

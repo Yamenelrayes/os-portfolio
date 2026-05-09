@@ -409,8 +409,8 @@ Technologies: JavaScript, HTML5, CSS3, Socket.io, Node.js`
     } else if (command === 'get cv') {
       // Trigger CV download
       const link = document.createElement('a');
-      link.href = '/yamen-cv.pdf';
-      link.download = 'yamen-cv.pdf';
+      link.href = '/resume.pdf';
+      link.download = 'resume.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
