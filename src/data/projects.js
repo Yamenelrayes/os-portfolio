@@ -10,7 +10,16 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      getAssetPath('/images/projects/dawri-1.png')
+      getAssetPath('/images/projects/dawri-1.png'),
+      getAssetPath('/images/projects/dawri-2.png'),
+      getAssetPath('/images/projects/dawri-3.png'),
+      getAssetPath('/images/projects/dawri-4.png'),
+      getAssetPath('/images/projects/dawri-5.png'),
+      getAssetPath('/images/projects/dawri-6.png'),
+      getAssetPath('/images/projects/dawri-7.png'),
+      getAssetPath('/images/projects/dawri-8.png'),
+      getAssetPath('/images/projects/dawri-9.png'),
+      getAssetPath('/images/projects/dawri-10.png')
     ],
     image: getAssetPath('/images/projects/dawri-1.png')
   },
@@ -23,7 +32,13 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      getAssetPath('/images/projects/voxera-1.png')
+      getAssetPath('/images/projects/voxera-1.png'),
+      getAssetPath('/images/projects/voxera-2.png'),
+      getAssetPath('/images/projects/voxera-3.png'),
+      getAssetPath('/images/projects/voxera-4.png'),
+      getAssetPath('/images/projects/voxera-5.png'),
+      getAssetPath('/images/projects/voxera-6.png'),
+      getAssetPath('/images/projects/voxera-7.png')
     ],
     image: getAssetPath('/images/projects/voxera-1.png')
   },
@@ -36,7 +51,12 @@ const projects = [
     githubLink: '',
     demoLink: '',
     images: [
-      getAssetPath('/images/projects/bodylog-1.png')
+      getAssetPath('/images/projects/bodylog-1.png'),
+      getAssetPath('/images/projects/bodylog-2.png'),
+      getAssetPath('/images/projects/bodylog-3.png'),
+      getAssetPath('/images/projects/bodylog-4.png'),
+      getAssetPath('/images/projects/bodylog-5.png'),
+      getAssetPath('/images/projects/bodylog-6.png')
     ],
     image: getAssetPath('/images/projects/bodylog-1.png')
   },
